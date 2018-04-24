@@ -3,7 +3,7 @@ import CustomerForm from './customer_form';
 import CustomerList from './customer_list';
 import axios from 'axios';
 //const API_BASE = "http://localhost:3000/";
-const API_BASE = "https://travel-agent-api.herokuapp.com/";
+const API_BASE = "https://travel-agent-api.herokuapp.com";
 
 class Customers extends React.Component {
 

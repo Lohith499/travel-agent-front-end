@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 //const API_BASE = 'http://localhost:3000/';
-const API_BASE = "https://travel-agent-api.herokuapp.com/";
+const API_BASE = "https://travel-agent-api.herokuapp.com";
 
 class VacationForm extends React.Component {
 
