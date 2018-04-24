@@ -18,7 +18,7 @@ const TopNav  = (props) =>  {
           <Nav>
             <LinkContainer to="/customers">
               <NavItem eventKey={2}>
-                Authors
+                Customers
               </NavItem>
             </LinkContainer>
             <LinkContainer to="/about">
