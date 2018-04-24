@@ -6,7 +6,9 @@
   "main": "src/index.js",
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^3.3.7",
     "react": "16.3.2",
+    "react-bootstrap": "^0.32.1",
     "react-bootstrap3-components": "2.9.0",
     "react-dom": "16.3.2",
     "react-scripts": "1.1.4"
