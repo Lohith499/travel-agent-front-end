@@ -16,7 +16,7 @@ const TopNav  = (props) =>  {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer to="/authors">
+            <LinkContainer to="/customers">
               <NavItem eventKey={2}>
                 Authors
               </NavItem>
