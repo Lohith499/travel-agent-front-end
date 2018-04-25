@@ -10,7 +10,7 @@ const CustomerListItem  = (props) =>  {
       <td className="col-md-3">{props.Address}</td>
       <td className="col-md-3">{props.TravelAgent_email}</td>
       <td className="col-md-3 btn-toolbar">
-        <Link to={`/customers/${props.id}/vacations`}>
+        <Link to={`/customers/${props.id}/vacations?per_page=all`}>
         <button className="btn btn-success btn-sm">
           <i className="glyphicon glyphicon-list"></i> Vacations
         </button>
