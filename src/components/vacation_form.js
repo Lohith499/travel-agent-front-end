@@ -120,7 +120,7 @@ class VacationForm extends React.Component {
              //<textarea className="form-control" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange} rows="6"></textarea>
              <label for="VacationDate" class="col-2 col-form-label">VacationDate</label>
              <div class="col-10">
-              <input class="form-control" type="date" id="example-date-input" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange}>
+              <input class="form-control" type="date" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange}>
               </div>
            </div>
            <div className="form-group">

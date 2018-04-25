@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomerList from './customers';
+import Homecustomers from './homecustomer';
 
 
 const Home  = (props) =>  {
@@ -12,7 +12,7 @@ const Home  = (props) =>  {
           <p><a className="btn btn-primary btn-lg" href="" role="button">Learn more &raquo;</a></p>
         </div>
       </div>
-      <Customers />
+      <Homecustomers />
     </div>
   );
 }
