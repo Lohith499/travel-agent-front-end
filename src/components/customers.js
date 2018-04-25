@@ -44,7 +44,7 @@ class Customers extends React.Component {
 
   loadCustomers() {
     axios
-    .get(`${API_BASE}/customers/`)
+    .get(`${API_BASE}/customers?per_page=all`)
     .then(res => {
       this.setState({ customers: res.data });
       console.log(`Data loaded! = ${this.state.customers}`)
