@@ -1,5 +1,7 @@
 import React from 'react';
-import CustomerList from './customer_list';
+import CustomerList from './customers';
+
+
 const Home  = (props) =>  {
   return (
     <div>
@@ -10,7 +12,7 @@ const Home  = (props) =>  {
           <p><a className="btn btn-primary btn-lg" href="" role="button">Learn more &raquo;</a></p>
         </div>
       </div>
-      <CustomerList />
+      <Customers />
     </div>
   );
 }

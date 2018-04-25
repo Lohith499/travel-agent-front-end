@@ -116,20 +116,36 @@ class VacationForm extends React.Component {
              <input type="text" className="form-control" name="Place" id="Place" placeholder="Enter Place" value={this.state.Place} onChange={this.handleInputChange}/>
            </div>
            <div className="form-group">
-             <label htmlFor="VacationDate">VacationDate</label>
-             <textarea className="form-control" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange} rows="6"></textarea>
+             //<label htmlFor="VacationDate">VacationDate</label>
+             //<textarea className="form-control" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange} rows="6"></textarea>
+             <label for="VacationDate" class="col-2 col-form-label">VacationDate</label>
+             <div class="col-10">
+              <input class="form-control" type="date" id="example-date-input" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange}>
+              </div>
            </div>
            <div className="form-group">
              <label htmlFor="Description">Description</label>
              <textarea className="form-control" name="Description" id="Description" value={this.state.Description} onChange={this.handleInputChange} rows="6"></textarea>
            </div>
            <div className="form-group">
-             <label htmlFor="Budget">Budget</label>
-             <textarea className="form-control" name="Budget" id="Budget" value={this.state.Budget} onChange={this.handleInputChange} rows="6"></textarea>
-           </div>
+            // <label htmlFor="Budget">Budget</label>
+            // <textarea className="form-control" name="Budget" id="Budget" value={this.state.Budget} onChange={this.handleInputChange} rows="6"></textarea>
+
+           <label for="Budget" class="col-2 col-form-label">Budget</label>
+            <div class="col-10">
+            <input class="form-control" type="number" name="Budget" id="name="Budget" id="Budget" value={this.state.Budget} onChange={this.handleInputChange}" value={this.state.Budget} onChange={this.handleInputChange}>
+            </div>
+             </div>
            <div className="form-group">
-             <label htmlFor="Transport">Transport</label>
-             <textarea className="form-control" name="Transport" id="Transport" value={this.state.Transport} onChange={this.handleInputChange} rows="6"></textarea>
+             //<label htmlFor="Transport">Transport</label>
+             //<textarea className="form-control" name="Transport" id="Transport" value={this.state.Transport} onChange={this.handleInputChange} rows="6"></textarea>
+             <label for="Transport">Transport</label>
+              <select class="form-control" id="Transport" name="Transport" value={this.state.Transport} onChange={this.handleInputChange}>
+                  <option>Airways</option>
+                  <option>Bus</option>
+                  <option>Cab</option>
+                  <option>Train</option>
+                  </select>
            </div>
            <div className="form-group">
              <label htmlFor="Image">Image</label>
