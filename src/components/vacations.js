@@ -55,7 +55,7 @@ class Vacations extends React.Component {
 
   loadVacations() {
     axios
-    .get(`${API_BASE}/customers/${this.state.customer_id}/vacations`)
+    .get(`${API_BASE}/customers/${this.state.customer_id}/vacations?per_page=all`)
     .then(res => {
       this.setState({ vacations: res.data });
       console.log(`Data loaded! = ${this.state.vacations}`)
