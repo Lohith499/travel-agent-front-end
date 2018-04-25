@@ -12,13 +12,7 @@ import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
-import $ from 'jquery';
-import DataTable from 'datatables.net';
 
-$.DataTable = DataTable;
-$(document).ready(function() {
-          $('#example').DataTable();
-      } );
 
 ReactDOM.render(
   <BrowserRouter>

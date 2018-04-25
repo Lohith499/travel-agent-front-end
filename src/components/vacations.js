@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import $ from 'jquery';
+import DataTable from 'datatables.net';
+$.DataTable = DataTable;
+
 //const API_BASE = 'http://localhost:3000/';
 const API_BASE = "https://travel-agent-api.herokuapp.com/";
 const VacationItem  = (props) =>  {
@@ -73,6 +77,9 @@ class Vacations extends React.Component {
   componentDidMount() {
     console.log('Vacations mounted!')
     this.loadVacations();
+    $(document).ready(function() {
+              $('#example').DataTable();
+          } );
   }
 
   render() {
@@ -109,6 +116,7 @@ class Vacations extends React.Component {
                 <th className="col-md-3">Budget</th>
                 <th className="col-md-3">Transport</th>
                 <th className="col-md-3">Image</th>
+                <th className="col-md-3">Actions</th>
               </tr>
             </thead>
             <tbody>
