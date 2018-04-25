@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import ReactTable from "react-table";
-import "react-table/react-table.css";
+//import ReactTable from "react-table";
+//import "react-table/react-table.css";
 
 /*import $ from 'jquery';
 import DataTable from 'datatables.net';
