@@ -106,7 +106,7 @@ class Vacations extends React.Component {
       )
     });
 
-        const headerString = (this.state.vacations.count === 0)
+    const headerString = (this.state.vacations.count === 0)
       ? "Loading..." : `Vacations by ${this.state.customer.FirstName} ${this.state.customer.LastName}`
     return (
       <div className="vacations">
@@ -128,7 +128,6 @@ class Vacations extends React.Component {
               {vacationItems}
             </tbody>
           </table>
-        //**********************************
           <Link to={`/customers/${this.state.customer_id}/vacations/create`}>
               <button className="btn btn-success btn-sm">
                 <i className="glyphicon glyphicon-plus"></i> Create
