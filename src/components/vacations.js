@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 //import "react-table/react-table.css";
 
 /*import $ from 'jquery';
-import DataTable from 'datatables.net';
+//import DataTable from 'datatables.net';
 $.DataTable = DataTable;*/
 
 //const API_BASE = 'http://localhost:3000/';

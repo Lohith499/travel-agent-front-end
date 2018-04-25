@@ -120,7 +120,7 @@ class VacationForm extends React.Component {
              //<textarea className="form-control" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange} rows="6"></textarea>
              <label for="VacationDate" class="col-2 col-form-label">VacationDate</label>
              <div class="col-10">
-              <input class="form-control" type="date" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange}>
+              <input class="form-control" type="date" name="VacationDate" id="VacationDate" value={this.state.VacationDate} onChange={this.handleInputChange}/>
               </div>
            </div>
            <div className="form-group">
@@ -133,14 +133,14 @@ class VacationForm extends React.Component {
 
            <label for="Budget" class="col-2 col-form-label">Budget</label>
             <div class="col-10">
-            <input class="form-control" type="number" name="Budget" id="name="Budget" id="Budget" value={this.state.Budget} onChange={this.handleInputChange}" value={this.state.Budget} onChange={this.handleInputChange}>
+            <input class="form-control" type="number" name="Budget" id="name="Budget" id="Budget" value={this.state.Budget} onChange={this.handleInputChange}" value={this.state.Budget} onChange={this.handleInputChange}/>
             </div>
              </div>
            <div className="form-group">
              //<label htmlFor="Transport">Transport</label>
              //<textarea className="form-control" name="Transport" id="Transport" value={this.state.Transport} onChange={this.handleInputChange} rows="6"></textarea>
              <label for="Transport">Transport</label>
-              <select class="form-control" id="Transport" name="Transport" value={this.state.Transport} onChange={this.handleInputChange}>
+              <select class="form-control" id="Transport" name="Transport" value={this.state.Transport} onChange={this.handleInputChange}/>
                   <option>Airways</option>
                   <option>Bus</option>
                   <option>Cab</option>
