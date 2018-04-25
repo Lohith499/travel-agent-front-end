@@ -1,12 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import $ from 'jquery';
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+
+/*import $ from 'jquery';
 import DataTable from 'datatables.net';
-$.DataTable = DataTable;
+$.DataTable = DataTable;*/
 
 //const API_BASE = 'http://localhost:3000/';
 const API_BASE = "https://travel-agent-api.herokuapp.com/";
+
+
 const VacationItem  = (props) =>  {
   return (
     <tr>
@@ -30,6 +35,8 @@ const VacationItem  = (props) =>  {
   );
 }
 
+
+
 class Vacations extends React.Component {
 
   constructor(props) {
@@ -39,6 +46,7 @@ class Vacations extends React.Component {
       vacations: [],
       customer_id: id,
       customer: {}
+
     };
 
     this.loadVacations = this.loadVacations.bind(this);
@@ -77,9 +85,6 @@ class Vacations extends React.Component {
   componentDidMount() {
     console.log('Vacations mounted!')
     this.loadVacations();
-    $(document).ready(function() {
-              $('#example').DataTable();
-          } );
   }
 
   render() {
@@ -101,13 +106,13 @@ class Vacations extends React.Component {
       )
     });
 
-    const headerString = (this.state.vacations.count === 0)
+        const headerString = (this.state.vacations.count === 0)
       ? "Loading..." : `Vacations by ${this.state.customer.FirstName} ${this.state.customer.LastName}`
     return (
       <div className="vacations">
         <h1> {headerString} </h1>
         <div className="customer-list">
-          <table className="table table-hover" id="example">
+          <table className="table table-hover">
             <thead>
               <tr>
                 <th className="col-md-3">Place</th>
@@ -123,6 +128,7 @@ class Vacations extends React.Component {
               {vacationItems}
             </tbody>
           </table>
+        //**********************************
           <Link to={`/customers/${this.state.customer_id}/vacations/create`}>
               <button className="btn btn-success btn-sm">
                 <i className="glyphicon glyphicon-plus"></i> Create
