@@ -95,12 +95,12 @@ class Vacations extends React.Component {
     });
 
     const headerString = (this.state.vacations.count === 0)
-      ? "Loading..." : `Vacations by ${this.state.customer.fname} ${this.state.customer.lname}`
+      ? "Loading..." : `Vacations by ${this.state.customer.FirstName} ${this.state.customer.LastName}`
     return (
       <div className="vacations">
         <h1> {headerString} </h1>
         <div className="customer-list">
-          <table className="table table-hover">
+          <table className="table table-hover" id="example">
             <thead>
               <tr>
                 <th className="col-md-3">Place</th>
