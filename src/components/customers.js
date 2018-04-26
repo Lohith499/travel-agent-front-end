@@ -2,8 +2,12 @@ import React from 'react';
 import CustomerForm from './customer_form';
 import CustomerList from './customer_list';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import { TableSimple, TablePagination } from 'react-pagination-table';
 //const API_BASE = "http://localhost:3000/";
 const API_BASE = "https://travel-agent-api.herokuapp.com";
+const Header = ["FirstName", "LastName", "Phone", "Address", "TravelAgent_email" ];
+
 
 class Customers extends React.Component {
 
@@ -47,11 +51,13 @@ class Customers extends React.Component {
     .get(`${API_BASE}/customers?per_page=all`)
     .then(res => {
       this.setState({ customers: res.data });
+
       console.log(`Data loaded! = ${this.state.customers}`)
+      console.log(res.data)
     })
     .catch(err => console.log(err));
   }
-
+//console.log(`Data loaded! = ${this.state.customers}`)
   addCustomer(newCustomer) {
     axios
     .post(`${API_BASE}/customers`, newCustomer)
@@ -102,6 +108,7 @@ class Customers extends React.Component {
           onEdit={(mode,customer) => this.updateForm(mode,customer)}
         />
       </div>
+
     );
   }
 }

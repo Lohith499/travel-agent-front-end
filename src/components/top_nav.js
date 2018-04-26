@@ -5,30 +5,18 @@ import { LinkContainer } from 'react-router-bootstrap';
 const TopNav  = (props) =>  {
   return (
     <div>
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <LinkContainer to="/">
-              <a href="/"> My Blog </a>
-            </LinkContainer>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <LinkContainer to="/customers">
-              <NavItem eventKey={2}>
-                Customers
-              </NavItem>
-            </LinkContainer>
-            <LinkContainer to="/about">
-              <NavItem eventKey={3}>
-                About
-              </NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="/">Travel Agent</a>
+      </div>
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/customers">Edit Customers</a></li>
+      <li><a href="/about">About</a></li>
+      </ul>
+      </div>
+      </nav>
     </div>
   );
 }

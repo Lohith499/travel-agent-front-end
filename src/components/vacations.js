@@ -15,13 +15,13 @@ const API_BASE = "https://travel-agent-api.herokuapp.com/";
 const VacationItem  = (props) =>  {
   return (
     <tr>
-      <td className="col-md-3">{props.Place}</td>
-      <td className="col-md-3">{props.VacationDate}</td>
-      <td className="col-md-3">{props.Description}</td>
-      <td className="col-md-3">{props.Budget}</td>
-      <td className="col-md-3">{props.Transport}</td>
-      <td className="col-md-3">{props.Image}</td>
-      <td className="col-md-3 btn-toolbar">
+      <td className="col-xs-2">{props.Place}</td>
+      <td className="col-xs-2">{props.VacationDate}</td>
+      <td className="col-xs-5">{props.Description}</td>
+      <td className="col-xs-2">{props.Budget}</td>
+      <td className="col-xs-2">{props.Transport}</td>
+      <td className="col-xs-3">{props.Image}</td>
+      <td className="col-xs-5 btn-toolbar">
         <Link to={`/customers/${props.customer_id}/vacations/${props.id}`}>
             <button className="btn btn-success btn-sm">
               <i className="glyphicon glyphicon-pencil"></i> Edit
@@ -110,24 +110,28 @@ class Vacations extends React.Component {
       ? "Loading..." : `Vacations by ${this.state.customer.FirstName} ${this.state.customer.LastName}`
     return (
       <div className="vacations">
+        <br></br>
+        <br></br>
+        <br></br>
         <h1> {headerString} </h1>
         <div className="customer-list">
-          <table className="table table-hover">
-            <thead>
+          <div className="table-area">
+          <table className="responsive-table table" id="customer">
               <tr>
-                <th className="col-md-3">Place</th>
-                <th className="col-md-3">VacationDate</th>
-                <th className="col-md-3">Description</th>
-                <th className="col-md-3">Budget</th>
-                <th className="col-md-3">Transport</th>
-                <th className="col-md-3">Image</th>
-                <th className="col-md-3">Actions</th>
+                <th className="col-xs-2">Place</th>
+                <th className="col-xs-2">VacationDate</th>
+                <th className="col-xs-5">Description</th>
+                <th className="col-xs-2">Budget</th>
+                <th className="col-xs-2">Transport</th>
+                <th className="col-xs-3">Image</th>
+                <th className="col-xs-5">Actions</th>
               </tr>
-            </thead>
+
             <tbody>
               {vacationItems}
             </tbody>
           </table>
+          </div>
           <Link to={`/customers/${this.state.customer_id}/vacations/create`}>
               <button className="btn btn-success btn-sm">
                 <i className="glyphicon glyphicon-plus"></i> Create

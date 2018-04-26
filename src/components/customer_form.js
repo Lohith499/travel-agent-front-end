@@ -74,8 +74,14 @@ class CustomerForm extends React.Component {
 
   render()  {
     return (
+
       <div className="customer-form">
-        <h1> Customers </h1>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h1> Customers </h1>
+      <div className="container">
+      <div className="bd-example" data-example-id="">
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>First Name</label>
@@ -99,6 +105,8 @@ class CustomerForm extends React.Component {
           </div>
           {this.renderButtons()}
         </form>
+        </div>
+        </div>
       </div>
     );
   }

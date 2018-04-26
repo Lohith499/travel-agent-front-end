@@ -1,11 +1,16 @@
 import React from 'react';
-
+import {Component} from 'react';
 import CustomerList from './customer_list';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import { TableSimple, TablePagination } from 'react-pagination-table';
+import {Tbl} from './Tbl';
+const Header = ["FirstName", "LastName", "Phone", "Address", "TravelAgent_email" ];
 //const API_BASE = "http://localhost:3000/";
 const API_BASE = "https://travel-agent-api.herokuapp.com";
 
-class Homecustomers extends React.Component {
+
+class Homecustomers extends Component {
 
   constructor(props) {
     super(props);
@@ -48,9 +53,11 @@ class Homecustomers extends React.Component {
     .then(res => {
       this.setState({ customers: res.data });
       console.log(`Data loaded! = ${this.state.customers}`)
+      console.log(res.data)
     })
     .catch(err => console.log(err));
   }
+
 
   addCustomer(newCustomer) {
     axios
@@ -85,17 +92,14 @@ class Homecustomers extends React.Component {
   componentDidMount() {
     console.log("Customers just got mounted")
     this.loadCustomers();
+    console.log
   }
 
-  render() {
+    render() {
     return (
-      <div className="Home-customers">
-        <CustomerList
-          customers={this.state.customers}
-          onDelete={(id) => this.removeCustomer(id)}
-          onEdit={(mode,customer) => this.updateForm(mode,customer)}
-        />
-      </div>
+
+        <Tbl data={this.state.customers}/>
+
     );
   }
 }

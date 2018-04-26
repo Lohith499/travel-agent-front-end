@@ -9,10 +9,21 @@ import TopNav from './components/top_nav';
 import Footer from './components/footer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import './index.css';
+//import './bt.css';
+/*import "./DataTables/datatables.min.css";
+import "./DataTables/datatables.min.js";
+import $ from 'jquery';
+import DataTable from 'datatables.net';
+$.DataTable = DataTable;
 
+
+//import './vaca.css';
+$(document).ready( function () {
+    $('#example').DataTable();
+} );*/
 
 ReactDOM.render(
   <BrowserRouter>

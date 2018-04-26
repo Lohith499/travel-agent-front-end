@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { render } from 'react-dom';
+//import { TableSimple } from 'react-pagination-table';
+
 
 const CustomerListItem  = (props) =>  {
   return (
     <tr>
-      <td className="col-md-3">{props.FirstName}</td>
-      <td className="col-md-3">{props.LastName}</td>
-      <td className="col-md-3">{props.Phone}</td>
-      <td className="col-md-3">{props.Address}</td>
-      <td className="col-md-3">{props.TravelAgent_email}</td>
-      <td className="col-md-3 btn-toolbar">
+      <td className="col-xs-1">{props.FirstName}</td>
+      <td className="col-xs-1">{props.LastName}</td>
+      <td className="col-xs-1">{props.Phone}</td>
+      <td className="col-xs-4">{props.Address}</td>
+      <td className="col-xs-2">{props.TravelAgent_email}</td>
+      <td className="col-xs-5 btn-toolbar" width="263.111px">
         <Link to={`/customers/${props.id}/vacations?per_page=all`}>
         <button className="btn btn-success btn-sm">
           <i className="glyphicon glyphicon-list"></i> Vacations
@@ -25,6 +28,7 @@ const CustomerListItem  = (props) =>  {
   </tr>
 );
 }
+
 
 const CustomerList = (props) => {
   const customerItems = props.customers.map((customer)  => {
@@ -43,23 +47,28 @@ const CustomerList = (props) => {
     )
   });
 
+
   return (
+    <div>
     <div className="customer-list">
-      <table className="table table-hover">
-        <thead>
+    <div className="table-area">
+      <table className="responsive-table table" id="customer">
+
           <tr>
-            <th className="col-md-3">First Name</th>
-            <th className="col-md-3">Last Name</th>
-            <th className="col-md-3">Phone</th>
-            <th className="col-md-3">Address</th>
-            <th className="col-md-3">TravelAgent_email</th>
-            <th className="col-md-3">Actions</th>
+            <th className="col-xs-2">First Name</th>
+            <th className="col-xs-2">Last Name</th>
+            <th className="col-xs-3">Phone</th>
+            <th className="col-xs-4">Address</th>
+            <th className="col-xs-2">TravelAgent_email</th>
+            <th className="col-xs-5">Actions</th>
           </tr>
-        </thead>
+
         <tbody>
           {customerItems}
         </tbody>
       </table>
+      </div>
+      </div>
     </div>
   );
 }
