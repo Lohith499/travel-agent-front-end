@@ -1,11 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
-import CustomerList from './customer_list';
 import axios from 'axios';
-import PropTypes from 'prop-types';
-import { TableSimple, TablePagination } from 'react-pagination-table';
 import {Tbl} from './Tbl';
-const Header = ["FirstName", "LastName", "Phone", "Address", "TravelAgent_email" ];
 //const API_BASE = "http://localhost:3000/";
 const API_BASE = "https://travel-agent-api.herokuapp.com";
 
@@ -92,7 +88,7 @@ class Homecustomers extends Component {
   componentDidMount() {
     console.log("Customers just got mounted")
     this.loadCustomers();
-    console.log
+    
   }
 
     render() {

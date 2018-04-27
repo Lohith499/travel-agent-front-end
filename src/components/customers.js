@@ -2,11 +2,8 @@ import React from 'react';
 import CustomerForm from './customer_form';
 import CustomerList from './customer_list';
 import axios from 'axios';
-import PropTypes from 'prop-types';
-import { TableSimple, TablePagination } from 'react-pagination-table';
 //const API_BASE = "http://localhost:3000/";
 const API_BASE = "https://travel-agent-api.herokuapp.com";
-const Header = ["FirstName", "LastName", "Phone", "Address", "TravelAgent_email" ];
 
 
 class Customers extends React.Component {

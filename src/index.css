@@ -36,13 +36,11 @@ body {
     color: white;
 }
 
-
-
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #customers td, #customers th {
@@ -104,4 +102,36 @@ table.responsive-table td {
 table.responsive-table tr > td,
 table.responsive-table th {
   text-align: left;
+}
+
+.vdata {
+    border-collapse: collapse;
+    border: 2px solid black;
+    border-color: red;
+}
+
+.vdataDesccell{
+  border: 2px solid black;
+  border-color: red;
+}
+
+.vdataplace{
+  text-align: center;
+
+    color: #4CAF50;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    }
+.vdatabdt{
+  color: #111; font-family: 'Open Sans', sans-serif; font-size: 17px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;
+}
+
+
+
+.vdataDescscroll{
+  height:100px;overflow:auto;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;
 }

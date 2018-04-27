@@ -15,23 +15,84 @@ const API_BASE = "https://travel-agent-api.herokuapp.com/";
 const VacationItem  = (props) =>  {
   return (
     <tr>
-      <td className="col-xs-2">{props.Place}</td>
-      <td className="col-xs-2">{props.VacationDate}</td>
-      <td className="col-xs-5">{props.Description}</td>
-      <td className="col-xs-2">{props.Budget}</td>
-      <td className="col-xs-2">{props.Transport}</td>
-      <td className="col-xs-3">{props.Image}</td>
-      <td className="col-xs-5 btn-toolbar">
-        <Link to={`/customers/${props.customer_id}/vacations/${props.id}`}>
-            <button className="btn btn-success btn-sm">
-              <i className="glyphicon glyphicon-pencil"></i> Edit
-            </button>
-        </Link>
-        <button className="btn btn-danger btn-sm" onClick={event => props.onDelete(props.id)}>
-          <i className="glyphicon glyphicon-remove"></i> Delete
-        </button>
-      </td>
-    </tr>
+    <table className="vdata" width="766px">
+        <tbody>
+          <tr>
+              <td width="764.889px">
+                  <table className="vdata" height="279px" width="765px">
+                      <tbody>
+                          <tr height="9px">
+                              <td className="vdataplace" width="764px" height="40px" font-size="5vw">
+                              <h2>
+                              <b>Place:</b><u>{props.Place}</u>
+                              </h2>
+                              </td>
+                          </tr>
+                          <tr height="6.55556px">
+                              <td width="764px" height="6.55556px">
+                                  <table className="vdata" height="11px" width="764px">
+                                      <tbody>
+                                          <tr className="vdatabdt" height="45px">
+                                              <td width="250.667px" height="45px"><b>Budget:</b>${props.Budget}</td>
+                                              <td width="250.667px" height="45px"><b>Vacation_Date:</b>{props.VacationDate}</td>
+                                              <td width="250.667px" height="45px"><b>Transport Mode:</b> {props.Transport}</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </td>
+                          </tr>
+                          <tr height="92px">
+                              <td width="764px" height="92px">
+                                  <table className="vdata" height="188px" width="764px">
+                                      <tbody>
+                                          <tr height="45px">
+                                              <td className="vdataDesccell" width="491.556px" height="45px">
+                                                  <u><h3><b>Description</b></h3></u>
+                                                  <tr height="160.667px">
+                                                        <td className="vdataDesctxts" width="448.889px" height="160.667px">
+                                                        <div className="vdataDescscroll">
+                                                        {props.Description}
+                                                        </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr height="30px">
+                                                        <td  className="btn-toolbar" width="448.889px" height="40px" text-align="left">
+                                                        <div className="btn-group btn-group-justified">
+                                                          <a href="" className="btn btn-success btn-sm">
+                                                          <Link to={`/customers/${props.customer_id}/vacations/${props.id}`}>
+
+                                                                <h4><i className="glyphicon glyphicon-pencil"></i> Edit</h4>
+
+                                                          </Link>
+                                                          </a>
+                                                          <a href="" className="btn btn-danger btn-sm" onClick={event => props.onDelete(props.id)}>
+
+                                                            <h4><i className="glyphicon glyphicon-remove"></i> Delete</h4>
+
+                                                          </a>
+                                                        </div>
+                                                      </td>
+                                                    </tr>
+                                                </td>
+                                                <td border="10px solid black">
+                                                  <div class="gallery">
+                                                    <img src={props.Image} alt="" width="300" height="200" />
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </td>
+          </tr>
+        </tbody>
+        </table>
+        <br></br>
+        <br></br>
+        </tr>
   );
 }
 
@@ -107,7 +168,7 @@ class Vacations extends React.Component {
     });
 
     const headerString = (this.state.vacations.count === 0)
-      ? "Loading..." : `Vacations by ${this.state.customer.FirstName} ${this.state.customer.LastName}`
+      ? "Loading..." : `Vacations Plans for ${this.state.customer.FirstName} ${this.state.customer.LastName}`
     return (
       <div className="vacations">
         <br></br>
@@ -115,19 +176,26 @@ class Vacations extends React.Component {
         <br></br>
         <h1> {headerString} </h1>
         <div className="customer-list">
+        <div className="btn-toolbar" width="300px" text-align="left">
+        <div className="btn-group btn-group-justified">
+          <a href="" className="btn btn-success btn-sm col-md-6">
+          <Link to={`/customers/${this.state.customer_id}/vacations/create`}>
+
+                <h4><i className="glyphicon glyphicon-pencil"></i> Create</h4>
+
+          </Link>
+          </a>
+          <a href="" className="btn btn-danger btn-sm col-md-6" onClick={() => this.props.history.goBack()}>
+            <h4><i className="glyphicon glyphicon-remove"></i> Back</h4>
+          </a>
+        </div>
+        </div>
+
+
+
           <div className="table-area">
           <table className="responsive-table table" id="customer">
-              <tr>
-                <th className="col-xs-2">Place</th>
-                <th className="col-xs-2">VacationDate</th>
-                <th className="col-xs-5">Description</th>
-                <th className="col-xs-2">Budget</th>
-                <th className="col-xs-2">Transport</th>
-                <th className="col-xs-3">Image</th>
-                <th className="col-xs-5">Actions</th>
-              </tr>
-
-            <tbody>
+              <tbody>
               {vacationItems}
             </tbody>
           </table>

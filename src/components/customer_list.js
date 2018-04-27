@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { render } from 'react-dom';
 //import { TableSimple } from 'react-pagination-table';
 
 

@@ -8,6 +8,7 @@ class VacationForm extends React.Component {
 
   constructor(props) {
 
+
     const id = props.match.params.id;
     const createMode = (props.match.path.endsWith("create")) ? true: false;
     super(props);
@@ -38,7 +39,7 @@ class VacationForm extends React.Component {
           VacationDate: res.data.VacationDate,
           Description: res.data.Description,
           Budget: res.data.Budget,
-          Transport: res.data.PlTransportace,
+          Transport:res.data.Transport,
           Image: res.data.Image
         })
       })
@@ -78,6 +79,7 @@ class VacationForm extends React.Component {
 
   handleSubmit(event)
   {
+    console.log(this.state.Transport);
     const vacation = {
       Place: this.state.Place,
       VacationDate: this.state.VacationDate,
@@ -104,6 +106,23 @@ class VacationForm extends React.Component {
   }
 
   render()  {
+    var h=4;
+    if (this.state.Transport==="Airways")
+    {
+      h=0
+    }
+    if (this.state.Transport==="Train")
+    {
+      h=1
+    }
+    if (this.state.Transport==="Bus")
+    {
+      h=2
+    }
+    if (this.state.Transport==="Cab")
+    {
+      h=3
+    }
    return (
      <div>
      <br></br>
@@ -117,6 +136,7 @@ class VacationForm extends React.Component {
         <div className="container">
         <div className="bd-example" data-example-id="">
          <form onSubmit={this.handleSubmit}>
+
            <div className="form-group">
              <label>Place</label>
              <input type="text" className="form-control" name="Place" id="Place" placeholder="Enter Place" value={this.state.Place} onChange={this.handleInputChange}/>
@@ -140,16 +160,18 @@ class VacationForm extends React.Component {
              </div>
            <div className="form-group">
              <label for="Transport">Transport</label>
-              <select class="form-control" id="Transport" name="Transport" value={this.state.Transport} onChange={this.handleInputChange}>
-                  <option>Airways</option>
-                  <option>Bus</option>
-                  <option>Cab</option>
-                  <option>Train</option>
+
+              <select class="form-control" id="Transport" name="Transport" value={h} onChange={this.handleInputChange}>
+                  <option value="0">Airways</option>
+                  <option value="1">Train</option>
+                  <option value="2">Bus</option>
+                  <option value="3">Cab</option>
+
                   </select>
            </div>
            <div className="form-group">
              <label htmlFor="Image">Image</label>
-             <textarea className="form-control" name="Image" id="Image" value={this.state.Image} onChange={this.handleInputChange} rows="6"></textarea>
+             <input type="text" className="form-control" name="Image" id="Image" value={this.state.Image} placeholder="Enter Image URL" onChange={this.handleInputChange}/>
            </div>
            <div className="form-group">
              <button type="submit" className="btn btn-primary">{this.state.createMode ? "Create" : "Save"}</button>
